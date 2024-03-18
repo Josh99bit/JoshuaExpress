@@ -1,10 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 30px;
+        }
+
+        .content, .email-popup {
+            flex-grow: 1;
+        }
+
+        .social-icons, .email-popup {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icons a, .email-popup a {
+            color: #e0e0e0; /* Light text color */
+            margin: 0 10px;
+            font-size: 24px; /* Icon size */
+        }
+
+        .email-popup {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background: #333;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            display: none; /* Hidden by default */
+        }
+
+        .email-popup p {
+            margin: 10px 0;
+        }
+
+        .email-popup a.close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 20px;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hi</h1>
-    <p>Find me here</p>
+    
+    <div class="content">
+        <h1>Hi, I'm Joshua </h1>
+        <p>I do stupid shit</p>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.discordapp.com/users/732150932359610408" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/Josh99bit" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="#" onclick="showEmailPopup();"><i class="fas fa-envelope"></i></a> <!-- Email icon -->
+    </div>
+
+    <div class="email-popup" id="emailPopup">
+        <p>Contact me at: Josh@joshua.express</p>
+        <a href="#" class="close" onclick="closeEmailPopup();">&times;</a>
+    </div>
+
+    <script>
+        function showEmailPopup() {
+            document.getElementById("emailPopup").style.display = "block";
+        }
+
+        function closeEmailPopup() {
+            document.getElementById("emailPopup").style.display = "none";
+        }
+    </script>
 </body>
 </html>
+
+
